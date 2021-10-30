@@ -1,22 +1,7 @@
 
-import java.util.ArrayList;
-
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-/**
- *
- * @author Admin
- */
 public class Index {
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        EmployeeManager manager = new EmployeeManager();
+    public static void addData(EmployeeManager manager) {
         //employee 1
         manager.add("A05", "Tran Quang", 7);
         //employee 2
@@ -27,6 +12,48 @@ public class Index {
         manager.add("A04", "Pham Thi Lam", 2);
         //employee 5
         manager.add("A02", "Do Trung Ton", 5);
+    }
+
+    public static void main(String[] args) {
+        EmployeeManager manager = new EmployeeManager();
+
+        // heap sort
+        addData(manager);
+        System.out.println("The employee list before sorting:");
+        manager.printAll();
+        System.out.println("Starting heapsort by ascending ID:");
+        HeapSort.sortAsc(manager.employeeList);
+        manager.printAll();
+        System.out.println("Starting heapsort by descending ID:");
+        HeapSort.sortDesc(manager.employeeList);
+        manager.printAll();
+        manager.clear();
+
+        // quick sort
+        System.out.println("\n\n");
+        addData(manager);
+        System.out.println("The employee list before sorting:");
+        manager.printAll();
+        System.out.println("Starting quicksort by ascending ID:");
+        QuickSort.quickSortAsc(manager.employeeList, 0, manager.employeeList.size() - 1);
+        manager.printAll();
+        System.out.println("Starting quicksort by descending ID:");
+        QuickSort.quickSortDesc(manager.employeeList, 0, manager.employeeList.size() - 1);
+        manager.printAll();
+        manager.clear();
+
+        // mergeAsc sort
+        System.out.println("\n\n");
+        addData(manager);
+        System.out.println("The employee list before sorting:");
+        manager.printAll();
+        System.out.println("Starting mergesort by ascending ID:");
+        MergeSort.mergeSortAsc(manager.employeeList, 0, manager.employeeList.size() - 1);
+        manager.printAll();
+        System.out.println("Starting mergesort by descending ID:");
+        MergeSort.mergeSortDesc(manager.employeeList, 0, manager.employeeList.size() - 1);
+        manager.printAll();
+        manager.clear();
     }
 
 }
