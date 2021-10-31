@@ -54,6 +54,45 @@ public class Index {
         MergeSort.mergeSortDesc(manager.employeeList, 0, manager.employeeList.size() - 1);
         manager.printAll();
         manager.clear();
+
+        // insertion sort
+        System.out.println("\n\n");
+        addData(manager);
+        System.out.println("The employee list before sorting:");
+        manager.printAll();
+        System.out.println("Starting insertionsort by ascending ID");
+        InsertionSort.sortAsc(manager.employeeList);
+        manager.printAll();
+        System.out.println("Starting insertionsort by descending ID");
+        InsertionSort.sortDesc(manager.employeeList);
+        manager.printAll();
+        manager.clear();
+
+        // selection sort
+        System.out.println("\n\n");
+        addData(manager);
+        System.out.println("The employee list before sorting:");
+        manager.printAll();
+        System.out.println("Starting selectionsort by ascending ID");
+        SelectionSort.sortAsc(manager.employeeList);
+        manager.printAll();
+        System.out.println("Starting selectionsort by descending ID");
+        SelectionSort.sortDesc(manager.employeeList);
+        manager.printAll();
+        manager.clear();
+
+        // bubble sort
+        System.out.println("\n\n");
+        addData(manager);
+        System.out.println("The employee list before sorting:");
+        manager.printAll();
+        System.out.println("Starting bubblesort by ascending ID");
+        BubbleSort.sortAsc(manager.employeeList);
+        manager.printAll();
+        System.out.println("Starting bubblesort by descending ID");
+        BubbleSort.sortDesc(manager.employeeList);
+        manager.printAll();
+        manager.clear();
     }
 
 }
